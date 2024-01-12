@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow:200,300,400,500,600,700,800,900&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Barlow", sans-serif;
+  background-color: #f1f3f7;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav .menubar {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.3);
+
+}
+@media screen and (max-width: 767px) {
+  nav .menubar {
+    height: 60px;
+    padding: 0 20px;
+  }
+}
+nav .menubar .home {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff5a5a;
+  transition: all 0.4s ease;
+}
+nav .menubar .home:hover {
+  opacity: 0.5;
+}
+nav .menubar .icons {
+  display: flex;
+
+}
+nav .menubar .icons .icon-menu {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+ 
+}
+nav .menubar .icons .icon-menu span {
+  background-color: #ff5a5a;
+  width: 30px;
+  height: 3px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.2s ease;
+  right: 0;
+  border-radius: 5px;
+}
+nav .menubar .icons .icon-menu span:before,
+nav .menubar .icons .icon-menu span:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #ff5a5a;
+  border-radius: 5px;
+}
+nav .menubar .icons .icon-menu span:before {
+  transform: translateY(-10px);
+  transition: all 0.3s 0.1s ease;
+}
+nav .menubar .icons .icon-menu span:after {
+  transform: translateY(10px);
+  transition: all 0.3s 0.2s ease;
+}
+nav .menubar .icons .icon-menu:hover span {
+  width: 30px;
+}
+nav .menubar .icons .icon-menu:hover span:before {
+  width: 25px;
+}
+nav .menubar .icons .icon-menu:hover span:after {
+  width: 20px;
+}
+nav .menubar .icons .icon-menu.icon-closed {
+  justify-content: center;
+}
+nav .menubar .icons .icon-menu.icon-closed span {
+  background-color: white;
+  justify-content: center;
+  width: 0px;
+  right: initial;
+  opacity: 0.5;
+  transition: all 0.6s ease;
+}
+nav .menubar .icons .icon-menu.icon-closed span:before,
+nav .menubar .icons .icon-menu.icon-closed span:after {
+  width: 30px;
+  background-color: white;
+}
+nav .menubar .icons .icon-menu.icon-closed span:before {
+  transform: rotate(45deg);
+}
+nav .menubar .icons .icon-menu.icon-closed span:after {
+  transform: rotate(-45deg);
+}
+nav .menubar .icons .icon-menu.icon-closed:hover span {
+  width: 0;
+  opacity: 1;
+}
+@media screen and (max-width: 767px) {
+  nav .menubar .icons .icon-menu.icon-closed:hover span:before {
+    transform: rotate(45deg);
+  }
+  nav .menubar .icons .icon-menu.icon-closed:hover span:after {
+    transform: rotate(-45deg);
+  }
+}
+nav .menubar .icons .secondary-icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav .menubar .icons .secondary-icons .icon-second {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+@media screen and (max-width: 767px) {
+  nav .menubar .icons .secondary-icons .icon-second {
+    margin: 0 5px;
+  }
+}
+nav .menubar .icons .secondary-icons .icon-second:last-child {
+  margin-right: 30px;
+}
+@media screen and (max-width: 767px) {
+  nav .menubar .icons .secondary-icons .icon-second:last-child {
+    margin-right: 15px;
+  }
+}
+nav .menubar .icons .secondary-icons .icon-second:hover {
+  transform: translateY(-5px);
+  opacity: 0.5;
+}
+@media screen and (max-width: 767px) {
+  nav .menubar .icons .secondary-icons .icon-second:hover {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+nav .menu {
+  display: none;
+
+}
+nav .menu.open {
+  display: flex;
+  z-index: 3;
+  overflow: hidden;
+  
+}
+nav .menu.open .menu-link {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  animation: menu 0.6s ease forwards;
+  height: 100vh;
+  position: relative;
+}
